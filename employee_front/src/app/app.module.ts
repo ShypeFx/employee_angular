@@ -9,16 +9,23 @@ import { ListEmployee } from './list-employee/list-employee';
 import { CreateEmployee } from './create-employee/create-employee';
 import { UpdateEmployee } from './update-employee/update-employee';
 import { DetailsEmployee } from './details-employee/details-employee';
+import { FormsModule } from '@angular/forms';
+import { DeleteEmployee } from './delete-employee/delete-employee';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListEmployee
+    DetailsEmployee,
+    ListEmployee,
+    CreateEmployee,
+    DeleteEmployee,
+    UpdateEmployee
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
