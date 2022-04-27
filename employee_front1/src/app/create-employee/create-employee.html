@@ -1,0 +1,30 @@
+<h2>Ajouter un employee</h2>
+
+<form (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+      <label>Nom</label>
+      <input type="text" class="form-control" id="name" 
+            [(ngModel)] = "employee.name" ng-minlength="5" name="name" placeholder="Example input">
+    </div>
+
+    <div class="form-group">
+      <label>Prenom</label>
+      <input type="text" class="form-control" id="firstname"  
+            [(ngModel)] = "employee.firstname" name="firstname" placeholder="Another input">
+    </div>
+
+    <div class="form-group">
+        <label>Poste</label><br>
+        <select  id="poste" [(ngModel)] = "employee.poste" name="poste">
+                <option *ngFor="let poste of listPoste" [value]="poste.name">{{poste.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" id="email" [(ngModel)] = "employee.email" name="email" placeholder="Another input">
+      </div>
+
+      <button class="btn btn-success" type="submit">Créer</button>
+      <a href=""><button class="btn btn-secondary">Retour</button></a>
+  </form>

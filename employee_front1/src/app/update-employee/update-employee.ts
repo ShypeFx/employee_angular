@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Employee } from "../model/employee";
+import { Poste } from "../model/poste";
 import { EmployeeService } from "../service/employee.service";
 
 
@@ -14,6 +15,15 @@ export class UpdateEmployee implements OnInit{
 
     employee!: Employee;
     id!: number;
+    listPoste: Poste[] = [
+      { id: 1, name: 'Stagiaire'},
+      { id: 2, name: 'Directeur'},
+      { id: 3, name: 'Scrum Master'},
+      { id: 4, name: 'Technicien'},
+      { id: 5, name: 'Tech Lead'},
+      { id: 6, name: 'Sales Manager'},
+      { id: 7, name: ''}
+    ];
 
     constructor(private employeeService: EmployeeService, private router: Router, private route: ActivatedRoute){}
 

@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { Employee } from "../model/employee";
+import { Poste } from "../model/poste";
 import { EmployeeService } from "../service/employee.service";
 
 @Component({
@@ -13,6 +14,15 @@ export class CreateEmployee implements OnInit{
 
 
     employee: Employee = new Employee();
+    listPoste: Poste[] = [
+      { id: 1, name: 'Stagiaire'},
+      { id: 2, name: 'Directeur'},
+      { id: 3, name: 'Scrum Master'},
+      { id: 4, name: 'Technicien'},
+      { id: 5, name: 'Tech Lead'},
+      { id: 6, name: 'Sales Manager'},
+      { id: 7, name: ''}
+    ];
     
 
     constructor(private employeeService:EmployeeService, private route: Router){}
@@ -36,4 +46,6 @@ export class CreateEmployee implements OnInit{
       console.log(this.employee);
       this.saveEmployee();
     }
+
+
 }
